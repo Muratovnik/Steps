@@ -1,0 +1,71 @@
+/* ---------------------
+    Common global styles
+--------------------- */
+
+/* Указываем box sizing */
+* {
+    box-sizing: border-box;
+
+    &::before,
+    &::after {
+        box-sizing: border-box;
+    }
+}
+
+/* Убираем внешние отступы */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+li,
+ul[class],
+ol[class],
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+    margin: 0;
+}
+
+/* Выставляем основные настройки по-умолчанию для body */
+body {
+    min-height: 100vh;
+    position: relative;
+
+    color: var(--black);
+    font-family: $fontMontserrat;
+    @include font;
+
+    scroll-behavior: smooth;
+}
+
+/* Элементы a, у которых нет класса, сбрасываем до дефолтных стилей */
+a {
+    text-decoration: none;
+    color: inherit;
+    &:not([class]) {
+        text-decoration-skip-ink: auto;
+    }
+}
+
+/* Визуально скрывает элемент. Остается видимым для ридеров */
+.visually-hidden {
+    position: absolute;
+    clip: rect(0 0 0 0);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+}
+
+.container {
+    max-width: 1060px;
+
+    padding: {
+        left: 20px;
+        right: 20px;
+    }
+    margin: 0 auto;
+}

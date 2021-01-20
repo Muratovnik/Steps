@@ -1,0 +1,20 @@
+// ---------------------
+//       Mixins
+// ---------------------
+
+// Установка параметров шрифта
+@mixin font(
+    $size: 18px,
+    $lineh: 22px,
+    $font_w: 400
+) {
+    font-size: $size;
+    line-height: $lineh;
+    font-weight: $font_w;
+}
+
+
+// Стили для заголовков
+@mixin h3 {
+    @include font(24px, 29px);
+}
